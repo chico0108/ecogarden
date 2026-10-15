@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Dispositivos</title><link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}"></head>
+<body>
+    <h1>EcoGarden - Dispositivos</h1>
+    <p><a href="/usuarios">Usuários</a> | <a href="/dispositivos">Dispositivos</a> | <a href="/leituras">Leituras</a> | <a href="/irrigacao">Irrigação</a></p>
+    
+    <form action="/add_disp" method="POST">
+        <input name="nome" placeholder="Nome" required>
+        <input name="local" placeholder="Local" required>
+        <button>Salvar</button>
+    </form>
+
+    <table>
+        <tr><th>ID</th><th>Nome</th><th>Local</th><th>Ação</th></tr>
+        {% for d in dados %}
+        <tr><td>{{d[0]}}</td><td>{{d[1]}}</td><td>{{d[2]}}</td><td><a href="/del_disp/{{d[0]}}">Excluir</a></td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

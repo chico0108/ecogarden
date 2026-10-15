@@ -1,0 +1,13 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+    background: #f4f9f4;
+}
+h1 { color: green; text-align: center; }
+.bloco { display: flex; gap: 20px; margin-bottom: 20px; }
+form { background: white; padding: 15px; border: 1px solid #ddd; flex: 1; }
+input { display: block; width: 100%; margin: 8px 0; padding: 6px; }
+button { background: green; color: white; border: none; padding: 8px; width: 100%; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 20px; }
+td, th { border: 1px solid #ddd; padding: 8px; text-align: center; }
+a { color: red; text-decoration: none; font-weight: bold; }

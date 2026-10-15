@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Usuários</title><link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}"></head>
+<body>
+    <h1>EcoGarden - Usuários</h1>
+    <p><a href="/usuarios">Usuários</a> | <a href="/dispositivos">Dispositivos</a> | <a href="/leituras">Leituras</a> | <a href="/irrigacao">Irrigação</a></p>
+    
+    <form action="/add_usuario" method="POST">
+        <input name="nome" placeholder="Nome" required>
+        <input name="email" placeholder="E-mail" required>
+        <button>Salvar</button>
+    </form>
+
+    <table>
+        <tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Ação</th></tr>
+        {% for u in dados %}
+        <tr><td>{{u[0]}}</td><td>{{u[1]}}</td><td>{{u[2]}}</td><td><a href="/del_usuario/{{u[0]}}">Excluir</a></td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
